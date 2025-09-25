@@ -126,9 +126,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 60px 20px;
   font-size: 1.3rem;
   text-align: center;
+  color: #fff;
 }
 
 .section h2 {
@@ -147,6 +148,16 @@
 }
 
 #section3 {
+  background: #111;
+  color: white;
+}
+
+#section4 {
+  background: #181818;
+  color: white;
+}
+
+#section5 {
   background: #111;
   color: white;
 }
@@ -247,14 +258,6 @@
 
 .btn-solid:hover {
   background: #ddd;
-}
-/* Section container */
-.section {
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
 }
 
 /* Overview text */
