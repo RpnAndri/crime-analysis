@@ -520,7 +520,43 @@
 
 .dataset-card-download:hover, .dataset-card-source:hover {
   color: #ddd;
-} 
+}
+
+.dataset-downloads-collapsible, .dataset-sources-collapsible {
+  background: #fff;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 9999px;
+  border: #fff;
+  cursor: pointer;
+  font-size: small;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 108px;
+  transition: all 0.3s ease;
+}
+
+.dataset-downloads-collapsible:hover, .dataset-sources-collapsible:hover {
+  color: #ddd;
+}
+
+.dataset-card-downloads, .dataset-card-sources {
+  /* margin-top: 0.6rem; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dataset-card-downloads.open, .dataset-card-sources.open {
+  max-height: 500px;
+}
+
+
 
 /* Extra Responsive Fixes (bandaid solution muna lelelel) */
 

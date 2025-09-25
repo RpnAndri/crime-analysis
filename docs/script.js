@@ -6,6 +6,8 @@ const nav = document.querySelector('.nav-links');
 
 // Datasets
 const datasetCards = document.querySelectorAll('.dataset-card');
+const datasetDownloads = document.querySelectorAll(".dataset-downloads-collapsible");
+const datasetSources = document.querySelectorAll(".dataset-sources-collapsible");
 
 // Scroll highlight
 window.addEventListener('scroll', () => {
@@ -47,5 +49,23 @@ datasetCards.forEach(card => {
   btn.addEventListener('click', () => {
     desc.classList.toggle('expanded');
     btn.textContent = desc.classList.contains('expanded') ? "Hide" : "Read more";
+  });
+});
+
+// Download collapsible
+datasetDownloads.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    content.classList.toggle('open');
+    console.log(content);
+  });
+});
+
+// Download collapsible
+datasetSources.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    content.classList.toggle('open');
+    console.log("CLCIKED");
   });
 });
