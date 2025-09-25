@@ -248,3 +248,108 @@
 .btn-solid:hover {
   background: #ddd;
 }
+/* Section container */
+.section {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+/* Overview text */
+.overview-text {
+  max-width: 900px;
+  margin: 1rem auto 3rem;
+  text-align: center;
+}
+.overview-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.2rem;
+}
+.overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tiles grid */
+.overview-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Main tiles */
+.tile {
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.tile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00c3ff;
+}
+.tile ul {
+  list-style: none; /* remove bullets */
+  padding-left: 0;
+}
+.tile li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Sub-tiles (for hypotheses) */
+.sub-tiles {
+  display: grid;
+  gap: 15px;
+}
+.sub-tile {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.sub-tile h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #00c3ff;
+}
+.sub-tile ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sub-tile li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overview-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vertically centered tile */
+.tile.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers vertically */
+  align-items: center;     /* centers horizontally */
+  text-align: center;
+}
