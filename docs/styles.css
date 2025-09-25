@@ -126,9 +126,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 60px 20px;
   font-size: 1.3rem;
   text-align: center;
+  color: #fff;
 }
 
 .section h2 {
@@ -148,6 +149,16 @@
 
 #section3 {
   background: #111;
+  color: white;
+}
+
+#section4 {
+  background: #181818;
+  color: white;
+}
+
+#section5 {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000000);
   color: white;
 }
 
@@ -197,5 +208,303 @@
   }
   .ph-logo .ph-map {
     width: 80px;
+  }
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 9999px; /* pill shape */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-outline .arrow {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Solid Button */
+.btn-solid {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-solid:hover {
+  background: #ddd;
+}
+
+/* Overview text */
+.overview-text {
+  max-width: 900px;
+  margin: 1rem auto 3rem;
+  text-align: center;
+}
+.overview-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.2rem;
+}
+.overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tiles grid */
+.overview-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Main tiles */
+.tile {
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.tile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00c3ff;
+}
+.tile ul {
+  list-style: none; /* remove bullets */
+  padding-left: 0;
+}
+.tile li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Sub-tiles (for hypotheses) */
+.sub-tiles {
+  display: grid;
+  gap: 15px;
+}
+.sub-tile {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.sub-tile h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #00c3ff;
+}
+.sub-tile ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sub-tile li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overview-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vertically centered tile */
+.tile.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers vertically */
+  align-items: center;     /* centers horizontally */
+  text-align: center;
+}
+
+/* Team Section configurations */
+.team-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+}
+
+.team-tile {
+  background: #1c1c1c;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+/* Number Circle */
+.team-number {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #00c3ff;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,195,255,0.4);
+}
+
+/* Profile Image */
+.team-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Description */
+.team-desc {
+  margin-top: 1rem;
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.team-desc h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #00c3ff;
+}
+
+.team-desc p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Extra Responsive Fixes (bandaid solution muna lelelel) */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .hero .tagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .nav-links {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .hero .tagline {
+    font-size: 0.95rem;
+  }
+
+  /* Overview tiles stack */
+  .overview-tiles {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .tile {
+    padding: 1.5rem;
+  }
+
+  /* Team section stacks vertically */
+  .team-tiles {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .team-tile {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .team-image {
+    width: 120px;
+    height: 120px;
+  }
+  .team-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  .team-desc {
+    padding: 0.8rem;
+  }
+  .team-desc h3 {
+    font-size: 1.1rem;
+  }
+  .team-desc p {
+    font-size: 0.85rem;
   }
 }
