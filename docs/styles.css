@@ -145,6 +145,7 @@
 #section2 {
   background: #181818;
   color: white;
+  justify-content: flex-start;
 }
 
 #section3 {
@@ -434,6 +435,35 @@
   line-height: 1.5;
 }
 
+/* Dataset Styles */
+/* Dataset Tiles */
+.s2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.dataset-card {
+  background: #1c1c1c;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  height: 
+}
+
+.dataset-card .dataset-card-desc {
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dataset-card .dataset-card-desc.expanded {
+  max-height: 300px;
+}
+
+
+
 /* Extra Responsive Fixes (bandaid solution muna lelelel) */
 
 /* Tablets */
@@ -506,5 +536,11 @@
   }
   .team-desc p {
     font-size: 0.85rem;
+  }
+
+  /* Dataset */
+  /* Dataset Tiles */
+  .s2-grid {
+    grid-template-columns: 1fr;
   }
 }

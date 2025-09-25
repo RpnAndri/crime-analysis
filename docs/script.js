@@ -4,6 +4,9 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 
+// Datasets
+const datasetCards = document.querySelectorAll('.dataset-card');
+
 // Scroll highlight
 window.addEventListener('scroll', () => {
   let current = "";
@@ -32,5 +35,17 @@ menuToggle.addEventListener('click', () => {
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('show');
+  });
+});
+
+// Dataset
+// Card description collapse
+datasetCards.forEach(card => {
+  const desc = card.querySelector(".dataset-card-desc");
+  const btn = card.querySelector(".dataset-card-toggle");
+
+  btn.addEventListener('click', () => {
+    desc.classList.toggle('expanded');
+    btn.textContent = desc.classList.contains('expanded') ? "Hide" : "Read more";
   });
 });
