@@ -199,3 +199,52 @@
     width: 80px;
   }
 }
+
+/* Hero Buttons */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 9999px; /* pill shape */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-outline .arrow {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Solid Button */
+.btn-solid {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-solid:hover {
+  background: #ddd;
+}
