@@ -1,22 +1,201 @@
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #bbb;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #00c3ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
   height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000000);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+}
+
+.hero-content {
+  max-width: 900px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.hero .tagline {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+/* Placeholder PH logo */
+.ph-logo {
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+}
 
-  background-color: #222; /* background color */
-  color: #f4f4f4;        /* font color */
-  font-family: Arial, sans-serif;
+.ph-logo .ph-map {
+  width: 120px;
+  height: auto;
+  fill: white;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  font-size: 1.3rem;
   text-align: center;
 }
 
-h1 {
-  margin-bottom: 0.5rem;
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-h2 {
-  font-weight: normal;
-  font-size: 1.2rem;
+#section1 {
+  background: #111;
+  color: white;
+}
+
+#section2 {
+  background: #181818;
+  color: white;
+}
+
+#section3 {
+  background: #111;
+  color: white;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------- Responsive Styles ------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    display: none;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .tagline {
+    font-size: 1rem;
+  }
+  .ph-logo .ph-map {
+    width: 80px;
+  }
 }
