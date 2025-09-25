@@ -449,20 +449,78 @@
   padding: 2rem 1.5rem;
   border-radius: 18px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-  height: 
+  height: 100%;
+}
+
+.dataset-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dataset-card .dataset-card-desc {
   max-height: 60px;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.5s ease;
 }
 
 .dataset-card .dataset-card-desc.expanded {
-  max-height: 300px;
+  max-height: 100%;
 }
 
+.dataset-card-title {
+  color: #00c3ff;
+}
 
+.dataset-card-desc {
+  font-size: small;
+  text-align: justify;
+}
+
+.dataset-card-toggle {
+  background: #fff;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 9999px;
+  border: #fff;
+  cursor: pointer;
+  font-size: small;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 108px;
+  transition: all 0.3s ease;
+}
+
+.dataset-card-toggle:hover{
+  background: #ddd;
+}
+
+.dataset-resources {
+  display: flex;
+}
+.dataset-resources h4 {
+  font-size: small;
+}
+
+.dataset-card-downloads, .dataset-card-sources{
+  list-style-type: none;
+}
+
+.dataset-card-download, .dataset-card-source {
+  font-size: small;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.dataset-card-download:hover, .dataset-card-source:hover {
+  color: #ddd;
+} 
 
 /* Extra Responsive Fixes (bandaid solution muna lelelel) */
 
