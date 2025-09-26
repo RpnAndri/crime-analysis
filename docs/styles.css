@@ -444,6 +444,13 @@
   width: 100%;
 }
 
+.unified {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 1rem;
+  width: 100%;
+}
+
 .dataset-card {
   background: #1c1c1c;
   padding: 2rem 1.5rem;
@@ -461,13 +468,13 @@
   cursor: pointer;
 }
 
-.dataset-card .dataset-collapsible {
+.dataset-collapsible {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-.dataset-card .dataset-collapsible.expanded, .dataset-card.expanded {
+.dataset-collapsible.expanded, .dataset-card.expanded {
   max-height: 100%;
   transition: max-height 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -547,6 +554,11 @@
 .dataset-downloads, .dataset-sources {
   flex: 1;
   transition: max-height 0.4s ease,
+}
+
+.dataset-bold {
+  color: #00c3ff;
+  font-weight: 700;
 }
 
 
