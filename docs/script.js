@@ -43,18 +43,20 @@ navLinks.forEach(link => {
 // Dataset
 // Card description collapse
 datasetCards.forEach(card => {
-  const desc = card.querySelector(".dataset-card-desc");
-  const btn = card.querySelector(".dataset-card-toggle");
+  const collapsible = card.querySelector(".dataset-collapsible");
 
-  btn.addEventListener('click', () => {
-    desc.classList.toggle('expanded');
-    btn.textContent = desc.classList.contains('expanded') ? "Hide" : "Read more";
+  card.addEventListener('click', () => {
+    card.classList.toggle('expanded');
+    collapsible.classList.toggle('expanded');
+
   });
 });
 
 // Download collapsible
 datasetDownloads.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (event) => {
+    event.stopPropagation();  // Stops the collapse of the parents
+
     const content = btn.nextElementSibling;
     content.classList.toggle('open');
     console.log(content);
@@ -63,7 +65,9 @@ datasetDownloads.forEach(btn => {
 
 // Download collapsible
 datasetSources.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (event) => {
+    event.stopPropagation();  // Stops the collapse of the parents
+    
     const content = btn.nextElementSibling;
     content.classList.toggle('open');
     console.log("CLCIKED");
