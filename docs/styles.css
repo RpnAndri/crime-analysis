@@ -450,6 +450,7 @@
   border-radius: 18px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dataset-card:hover {
@@ -509,13 +510,16 @@
 
 .dataset-card-downloads, .dataset-card-sources{
   list-style-type: none;
+  text-align: left;
 }
 
 .dataset-card-download, .dataset-card-source {
+  /* display: block; */
   font-size: small;
   text-decoration: none;
   color: #fff;
   transition: all 0.3s ease;
+  width: 50%;
 }
 
 .dataset-card-download:hover, .dataset-card-source:hover {
@@ -542,7 +546,7 @@
 }
 
 .dataset-downloads-collapsible:hover, .dataset-sources-collapsible:hover {
-  color: #ddd;
+  background-color: #ddd;
 }
 
 .dataset-card-downloads, .dataset-card-sources {
