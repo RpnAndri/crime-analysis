@@ -110,10 +110,11 @@
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.ph-logo .ph-map {
-  width: 120px;
+.ph-logo img {
+  width: 20%;
   height: auto;
   fill: white;
   opacity: 0.9;
