@@ -66,6 +66,6 @@ datasetSources.forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.nextElementSibling;
     content.classList.toggle('open');
-    console.log("CLCIKED");
+    console.log("CLICKED");
   });
 });
