@@ -20,6 +20,7 @@
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 .navbar .logo {
@@ -84,6 +85,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
   padding: 3rem;
 }
 
@@ -93,10 +95,25 @@
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: white; /* same as background color */
+  animation: reveal 1.5s ease forwards;
+}
+
+@keyframes reveal {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
 }
 
 .hero .tagline {
@@ -130,7 +147,7 @@
   padding: 60px 20px;
   font-size: 1.3rem;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 
 .section h2 {
@@ -166,8 +183,8 @@
 
 /* Fade in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ------------------- Responsive Styles ------------------- */
