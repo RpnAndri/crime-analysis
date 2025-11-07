@@ -447,14 +447,14 @@
   background: #1c1c1c;
   padding: 2rem 1.5rem;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0,195,255,0.3);
   max-height: 128px;
   transition: max-height 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .dataset-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -776,4 +776,30 @@ a {
   align-items: center;        /* vertical centering */
   justify-content: center;    /* horizontal centering */
   text-align: center;         /* fallback for wrapped text */
+}
+
+.subsection-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00c3ff;
+  position: relative;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0,195,255,0.3);
+  background: rgba(0,195,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.skibidi p.highlighted {
+  color: #00c3ff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(0,195,255,0.6), 0 0 15px rgba(0,195,255,0.4);
+  border-left: 4px solid #00c3ff;
+  padding-left: 0.8rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
 }
