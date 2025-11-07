@@ -817,3 +817,36 @@ a {
 .footer-note:hover {
   text-decoration: underline;
 }
+
+.hypothesis-results {
+  list-style-type: none;
+  padding-left: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.hypothesis-testing-figure {
+  text-align: center;
+  margin: 2.5rem auto;
+}
+
+.hypothesis-testing-summary {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto 0.75rem auto; /* space between image and caption */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.hypothesis-testing-summary:hover {
+  transform: scale(1.02);
+}
+
+.figure-caption {
+  font-size: 0.9rem;
+  color: #aaa; /* subtle, gray tone */
+  margin: 0;
+  font-style: italic;
+}
