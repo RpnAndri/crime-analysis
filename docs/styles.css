@@ -653,7 +653,7 @@
 }
 
 /* Wrap subsections to typical content width */
-.overview-subsections {
+.overview-subsections, .methodology-subsections {
   max-width: 900px; /* same as overview-text */
   margin: 2rem auto; /* center it with top/bottom spacing */
   text-align: left;  /* left-align inside box */
@@ -802,4 +802,18 @@ a {
   padding-left: 0.8rem;
   margin-bottom: 2.5rem;
   transition: all 0.3s ease;
+}
+
+.footer-note {
+  margin-top: 0.75rem;
+  font-size: 0.65rem;
+  color: #b8b4b4;
+  font-style: italic;
+  text-align: right;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-note:hover {
+  text-decoration: underline;
 }

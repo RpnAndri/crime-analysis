@@ -297,7 +297,98 @@
 
   <section id="section3" class="section">
     <h2 class="section-header">Methodology</h2>
-    <p>insert_text_here</p>
+    
+    <div class="methodology-subsections">
+      <div class="subsection">
+        <h4 class="subsection-header">Data Preprocessing</h4>
+        <div class="subsection-content">
+          <p class="highlighted">
+            As we are dealing with employment, poverty, and crime rate percentages across the Philippine regions, we need to clean and preprocess them separately. In doing so, we ensure the integrity of our data and thus our results & findings at the end of the study! Since we already have our unified dataset, we dissected this to confirm that our data remains consistent with the discussions in the data’s nature as explained in the 
+            <a href="#section3">Data Collection</a> section.
+          </p>
+
+          <!-- Sub-subsections (chronological numbered items) -->
+          <div class="subsubsection">
+            <strong>1.) Handling Missing/Null Values</strong>
+            <p>
+              Before any transformation, the unified dataset <code>unified_df</code> was inspected for missing or null values using 
+              <code>.info()</code>, <code>.isnull().sum()</code>, and heatmap visualization. 
+              No missing values were detected — the count and shape of the dataset remained consistent, 
+              confirming data completeness.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>2.) Data Cleaning and Type Conversion</strong>
+            <p>
+              Numerical columns (e.g., <em>population</em>, <em>poverty rates</em>, <em>crime counts</em>) contained commas and spaces. 
+              These were cleaned and converted to numeric types via string replacement and coercion 
+              to ensure consistency and prevent type-related computation errors.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>3.) Dropping Redundant or Irrelevant Features</strong>
+            <p>
+              Columns such as <em>standard error</em> and <em>coefficient of variation (CoV)</em> were dropped to reduce dimensionality and enhance analytical clarity. 
+              Remaining variables reflected only core socioeconomic and crime-related indicators.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>4.) Feature Renaming and Reinforcement</strong>
+            <p>
+              Variables were standardized for semantic clarity 
+              (e.g., <code>crime_solved_total</code> → <code>total_crime_solved</code>). 
+              A refined dataset <code>reinforced_df</code> was created, keeping only the relevant indicators 
+              such as demographics, employment, poverty, and crime statistics.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>5.) Outlier Detection and Treatment</strong>
+            <p>
+              Outliers were examined using both <strong>Z-score</strong> and <strong>IQR</strong> methods. 
+              Potential anomalies were identified using ±3 standard deviations and 1.5×IQR thresholds. 
+              Only evident data errors were removed, maintaining valid extremes for accuracy.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>6.) Feature Engineering</strong>
+            <p>
+              Two composite indicators were derived:
+              <code>Total Crime = Index Crime + Non-Index Crime</code> and 
+              <code>Total Poverty = Poverty (Urban) + Poverty (Rural)</code>. 
+              These provided more holistic regional indicators for the study.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>7.) Standardization</strong>
+            <p>
+              For correlation and regression analyses, numeric variables were standardized using 
+              <code>StandardScaler</code> from <code>sklearn</code> 
+              to achieve zero-mean and unit-variance scaling. 
+              This ensured equitable influence among features of differing magnitudes.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>8.) Final Output</strong>
+            <p>
+              The preprocessing produced two key datasets: 
+              <code>reinforced_df</code> (cleaned and optimized) and 
+              <code>standardized_df</code> (normalized for inferential analysis).
+            </p>
+
+            <div class="footer-note">
+              <a href="https://drive.google.com/drive/folders/1_knZiyQ45micvp-ORRz5ZlO693vtVdx-?usp=sharing">To view reinforced and standardized datasets, click me!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="section4" class="section">
