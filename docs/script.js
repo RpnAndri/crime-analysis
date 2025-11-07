@@ -73,3 +73,16 @@ datasetSources.forEach(btn => {
     console.log("CLICKED");
   });
 });
+
+// Subsection collapse toggle
+const subsectionHeaders = document.querySelectorAll('.subsection-header');
+
+subsectionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+
+    // Toggle classes
+    content.classList.toggle('open');
+    header.classList.toggle('active');
+  });
+});
