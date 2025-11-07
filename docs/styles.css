@@ -186,6 +186,7 @@
 .section-header { 
   position: relative;
   display: inline-block;
+  color: white;
 }
 
 .section-header::after {
@@ -289,7 +290,7 @@
   background: #1c1c1c;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,195,255,0.3);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -446,14 +447,14 @@
   background: #1c1c1c;
   padding: 2rem 1.5rem;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0,195,255,0.3);
   max-height: 128px;
   transition: max-height 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .dataset-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -649,4 +650,156 @@
   .s2-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Wrap subsections to typical content width */
+.overview-subsections {
+  max-width: 900px; /* same as overview-text */
+  margin: 2rem auto; /* center it with top/bottom spacing */
+  text-align: left;  /* left-align inside box */
+}
+
+.section h3 {
+  font-size: 2.5rem;
+}
+
+/* Subsection headers */
+.subsection-header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00c3ff;
+  cursor: pointer;
+  position: relative;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0,195,255,0.3);
+  background: rgba(0,195,255,0.1);
+  transition: all 0.3s ease;
+}
+
+
+.subsection-header:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.subsection-header::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+  transform: translateY(-7%);
+}
+
+.subsection-header.active::after {
+  content: '-';
+}
+
+/* Collapsible content */
+.subsection-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  padding-left: 0.5rem;
+}
+
+.subsection-content.open {
+  max-height: 1000px;
+  opacity: 1;
+  margin-bottom: 1.5rem; /* space below each subsection */
+}
+
+/* Highlighted paragraph */
+.subsection-content p.highlighted {
+  color: #00c3ff;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0,195,255,0.6), 0 0 15px rgba(0,195,255,0.4);
+  border-left: 4px solid #00c3ff;
+  padding-left: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Normal paragraph */
+.subsection-content p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/* Collapsed spacing */
+.subsection:not(.expanded) {
+  margin-bottom: 1.0rem; /* extra space only when collapsed */
+}
+
+/* When open, remove extra margin (content handles spacing) */
+.subsection .subsection-content.open {
+  margin-bottom: 0; 
+}
+
+/* Highlighted paragraph - bedazzling vibes */
+.tile p.highlighted {
+  color: #00c3ff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(0,195,255,0.6), 0 0 15px rgba(0,195,255,0.4);
+  border-left: 4px solid #00c3ff;
+  padding-left: 0.8rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tile p.highlighted:hover {
+  text-shadow: 0 0 12px rgba(0,195,255,0.8), 0 0 20px rgba(0,195,255,0.6);
+}
+
+/* Normal paragraph inside tile */
+.tile p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #a09f9f;
+  text-decoration: none;
+}
+
+.tile-header {
+  min-height: 7rem;          /* consistent vertical space */
+  display: flex;
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+  text-align: center;         /* fallback for wrapped text */
+}
+
+.subsection-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00c3ff;
+  position: relative;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0,195,255,0.3);
+  background: rgba(0,195,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.skibidi p.highlighted {
+  color: #00c3ff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(0,195,255,0.6), 0 0 15px rgba(0,195,255,0.4);
+  border-left: 4px solid #00c3ff;
+  padding-left: 0.8rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
 }
