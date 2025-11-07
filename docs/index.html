@@ -393,9 +393,71 @@
         <h4 class="subsection-header">Research Questions</h4>
         <div class="subsection-content">
           <p class="highlighted">
-            With the data preprocessed and ready, we can now analyze the data to uncover pattentserns and insights regarding the relationship between poverty, employment, and crime rates across Philippine regions. For now, let's answer our research questions!
+            With the data preprocessed and ready, we can now analyze the data to uncover pattentserns and insights regarding the relationship between poverty, employment, and crime rates across Philippine regions. For now, let's answer our research questions! Look at the github repository for a more detailed explanation.
           </p>
-          <p>insertStuffHere</p>
+
+
+          <!-- Sub-subsections (chronological numbered items) -->
+          <div class="subsubsection">
+            <strong>1.) What is the correlation between poverty and employment with crime rates across regions in the Philippines?</strong>
+            <p>
+              Scatter plots were done to visualize the relationships of poverty with crime and employment with crime. 
+            </p>
+            <div class="container">
+              <div class="graphs">
+                <img src="./images/3_methodology/b_researchQuestions/pc.png" alt="" class="graph">
+                <img src="./images/3_methodology/b_researchQuestions/ec.png" alt="" class="graph">
+                <img src="./images/3_methodology/b_researchQuestions/corr.png" alt="" class="graph">
+              </div>
+            </div>
+            <p>
+              Using these data, we can see that there is little correlation between our variables, however, separating the poverty values to urban and rural, we see something different in our correlation map.
+            </p>
+            <div class="corr2">
+              <img src="./images/3_methodology/b_researchQuestions/corr2.png" alt="" style="width: 70%; margin-top: 20px;">
+            </div>
+            <p>
+              Now, there is a slight correlation with poverty in urban areas with the number of crimes committed. This could be many reasons for this, such as a more "relaxed" life in rural areas or provinces and other cultural reasons. For now, we will keep it as this, and will be discussed further in the findings.
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>2.) How do regional variations in these socioeconomic and institutional factors (i.e., poverty and employment) influence differences in crime rates?</strong>
+            <p>
+              Here, we would like to analyze the regional variations or in other words, compare the values in each region. First, will show the time series plots and compare the regions.
+            </p>
+            <div class="container">
+              <div class="graphs">
+                <img src="./images/3_methodology/b_researchQuestions/pov.png" alt="" class="graph_2">
+                <img src="./images/3_methodology/b_researchQuestions/emp.png" alt="" class="graph_2">
+                
+              </div>
+              <div class="corr2">
+                <img src="./images/3_methodology/b_researchQuestions/crime.png" alt="" class="graph_2" width="70%">
+              </div>
+            </div>
+            <p>
+              From these graphs, we can see the regions generally follow the same trends. There does not seem to be much of an outlier except for NCR having a 140,000 total number of crime during 2018.
+              Now, let use look at the averages throughout the years in a bar graph to compare them easier.
+            </p>
+            <div class="graphs">
+              <img src="./images/3_methodology/b_researchQuestions/avg_p.png" alt="" class="graph">
+              <img src="./images/3_methodology/b_researchQuestions/avg_e.png" alt="" class="graph">
+              <img src="./images/3_methodology/b_researchQuestions/avg_c.png" alt="" class="graph">
+            </div>
+            <p>
+              Here we can see the average crime rate seem to be higher in 3 regions, namely NCR, Region 7 (Central Visayas), and Region 11 (Davao Region). There seems to be some relation on the location of a region on the crime rate. 
+            </p>
+          </div>
+
+
+           <div class="subsubsection">
+            <strong>3.) To what extent can improvements in these factors (e.g., reduced poverty, increased employment) predict a decrease in crime rates across regions?</strong>
+            <p>
+              This will be answered using the model.
+            </p>
+          </div>
+          
         </div>
       </div>
 
