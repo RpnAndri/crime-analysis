@@ -769,3 +769,11 @@ a {
   color: #a09f9f;
   text-decoration: none;
 }
+
+.tile-header {
+  min-height: 7rem;          /* consistent vertical space */
+  display: flex;
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+  text-align: center;         /* fallback for wrapped text */
+}
