@@ -464,9 +464,96 @@
       <div class="subsection">
         <h4 class="subsection-header">Hypothesis Testing</h4>
         <div class="subsection-content">
+
           <p class="highlighted">
-            insertStuffHere
-          <p>insertStuffHere</p>
+            This section focuses on evaluating our proposed hypotheses through statistical hypothesis testing. 
+            Using both <strong>Pearson correlation</strong> and <strong>independent sample t-tests</strong>, 
+            we assess whether socioeconomic factors, particularly <em>poverty</em> and <em>employment rate</em>,
+            exhibit significant relationships with <code>total_crime</code> across Philippine regions.
+          </p>
+
+          <div class="hypothesis-testing-figure">
+            <img 
+              src="./images/3_methodology/c_hypothesisTesting/hypothesisTesting.png" 
+              alt="Hypothesis Testing Diagram" 
+              class="hypothesis-testing-summary"
+            />
+            <p class="figure-caption">
+              Benchmark Correlation Table (p-values of each independent variable against each analytical approach)
+            </p>
+          </div>
+
+          <div class="subsubsection">
+            <strong>1.) Direct Analysis</strong>
+            <p>
+              Using raw observed data, <code>Pearson correlation</code> results showed no statistically significant linear 
+              relationships between <code>poverty_urban</code>, <code>poverty_rural</code>, or 
+              <code>employment_rate</code> and <code>total_crime</code>. 
+              However, <code>t-tests</code> comparing regions grouped by low vs high values revealed otherwise:
+              regions with <strong>higher urban poverty</strong> tend to have higher crime, while those with 
+              <strong>higher employment rates</strong> tend to have lower crime. 
+              This suggests that while the overall correlation may appear weak, threshold or non-linear dynamics could exist.
+            </p>
+            <!-- insert correlation table here broski -->
+          </div>
+
+          <div class="subsubsection">
+            <strong>2.) Tolerance of Gaps</strong>
+            <p>
+              Allowing small gaps (i.e., incomplete or missing entries) in the dataset did not materially alter the results.
+              The <code>Pearson</code> correlations remained weak and statistically insignificant, but the 
+              <code>t-test</code> results again highlighted significant contrasts between high and low groups 
+              for <code>poverty_urban</code> and <code>employment_rate</code>.
+              This reinforces the possibility that subtle group differences carry more explanatory power than purely linear trends.
+            </p>
+            <!-- insert t-test summary graph here broski -->
+          </div>
+
+          <div class="subsubsection">
+            <strong>3.) Imputation & Time Series</strong>
+            <p>
+              After addressing missing values through interpolation and time series-based imputation, 
+              the correlations changed markedly. <code>Pearson</code> tests showed significant positive 
+              correlation between <code>poverty_urban</code> and <code>total_crime</code> 
+              (p = 0.0026), and a significant negative correlation between 
+              <code>employment_rate</code> and <code>total_crime</code> (p = 0.0086). 
+              <code>Poverty_rural</code> remained statistically insignificant.
+            </p>
+            <p>
+              These results imply that missing data was <strong>masking real relationships</strong>, 
+              and that urban poverty and employment are indeed meaningful predictors of crime trends when 
+              the dataset is properly reinforced.
+            </p>
+            <!-- insert heatmap of significance here broski -->
+          </div>
+
+          <div class="subsubsection">
+            <strong>4.) Summary of Findings</strong>
+            <p>
+              Comparing across all analytical approaches, only the imputation-enhanced dataset 
+              revealed true linear correlations. The visual summary (heatmap) further confirms this:
+              <code>poverty_urban</code> and <code>employment_rate</code> both show significance (p &lt; 0.05),
+              while <code>poverty_rural</code> does not.
+            </p>
+            <p>
+              This strengthens our argument that <strong>data completeness and cleaning</strong> 
+              play a crucial role in hypothesis testing accuracy. It also establishes empirical 
+              support for rejecting:
+            </p>
+
+            <ul class="hypothesis-results">
+              <li><strong>H₀,₁ (Urban Poverty):</strong> Poverty has no significant effect on crime → <strong>Rejected</strong></li>
+              <li><strong>H₀,₁ (Rural Poverty):</strong> Poverty has no significant effect on crime → <strong>Failed to reject</strong></li>
+              <li><strong>H₀,₂:</strong> Employment rate has no significant effect on crime → <strong>Rejected</strong></li>
+            </ul>
+
+            <!-- insert benchmark summary table here broski -->
+          </div>
+
+          <div class="footer-note">
+            <a href="https://drive.google.com/file/d/1dfZtjzGTxSOCXSgISJfCDYPRW5oz7sUU/view?usp=sharing">To know more about the summary heatmap and benchmark correlation tables, check our EDA Jupyter notebook!</a>
+          </div>
+
         </div>
       </div>
 
