@@ -363,15 +363,15 @@
   background: #1c1c1c;
   padding: 2rem 1.5rem;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0,195,255,0.3);
   text-align: center;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-tile:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
 /* Number Circle */
@@ -874,4 +874,8 @@ a {
   flex: 2;
   width: 50%;
   margin-top: 20px;
+}
+
+.code-text {
+    font-family: 'Courier New', monospace;
 }

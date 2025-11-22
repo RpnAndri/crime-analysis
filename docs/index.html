@@ -68,11 +68,18 @@
         <h4 class="subsection-header">Background</h4>
         <div class="subsection-content">
           <p class="highlighted">
-            Poverty and unemployment continue to define the socioeconomic landscape of the Philippines. According to official estimates, the national poverty rate declined to 15.5% in 2023, down from 18.1% in 2021, representing about 17.54 million Filipinos living below the basic needs threshold <a href="https://www.pna.gov.ph/articles/1229459" target="_blank">[3]</a>.
+            Poverty and unemployment continue to define the socioeconomic landscape of the Philippines.
           </p>
           <p>
-            At the same time, crime remains a critical public concern. In the 2023 Global Organized Crime Index, the Philippines ranked 25th out of 193 countries in terms of criminality, indicating relatively high exposure to organized crime risks <a href="https://www.bworldonline.com/infographics/2023/09/28/548203/philippines-25th-globally-in-organized-crime-list/" target="_blank">[4]</a>.  
+            According to official estimates, the national poverty rate declined to 15.5% in 2023, down from 18.1% in 2021, representing about 17.54 million Filipinos living below the basic needs threshold <a href="https://www.pna.gov.ph/articles/1229459" target="_blank">[3]</a>.
+          </p>
+          <p>
+            At the same time, crime remains a critical public concern. In the 2023 Global Organized Crime Index, the Philippines ranked 25th out of 193 countries in terms of criminality, indicating relatively high exposure to organized crime risks <a href="https://www.bworldonline.com/infographics/2023/09/28/548203/philippines-25th-globally-in-organized-crime-list/" target="_blank">[4]</a>.
+          </p>
+          <p>
             Moreover, crime is not distributed uniformly across the archipelago. Recent regional-level studies of index crimes (such as theft, assault, property crimes) have shown that incidence and types of crime differ significantly across administrative regions, especially during and after the COVID-19 pandemic <a href="https://arxiv.org/abs/2302.04572" target="_blank">[5]</a>.  
+          </p>
+          <p>
             These observations point to pivotal questions: Why do some regions experience more crime despite similar economic conditions? How well do poverty and employment explain these spatial differences? By focusing on regional-level analysis from 2018 to 2023 (with 2025 for validation), this study aims to clarify how variations in socioeconomic status align with crime outcomes and whether improving economic conditions could help foster safer communities.
           </p>
         </div>
@@ -265,7 +272,7 @@
         <h2 class="dataset-card-title">Unified</h2>
         <div class="dataset-collapsible">
           <p class="dataset-card-desc">
-            Notes: This is the unified dataset for relevant data from the Employment, Poverty, and Crime datasets. Because regional poverty estimates are released only for 2018, 2021, and 2023, there are missing intermediate years. To address this, our analysis will consider three approaches:
+            This is the unified dataset for relevant data from the Employment, Poverty, and Crime datasets. Because regional poverty estimates are released only for 2018, 2021, and 2023, there are missing intermediate years. To address this, our analysis will consider three approaches:
             <br><br>&emsp; 1. <span class="dataset-bold">Direct Analysis (Sparse Years)</span> - Correlation and regression analysis using only the available years (2018, 2021, 2023).
             <br>&emsp; 2. <span class="dataset-bold">Tolerance of Gaps</span> - Treating missing years as gaps without interpolation (acknowledging limited temporal resolution).
             <br>&emsp; 3. <span class="dataset-bold">Imputation & Time Series Modeling</span> - Estimating values for gap years (2019, 2020, 2022) using statistical interpolation and time series forecasting techniques.
@@ -304,15 +311,15 @@
         <div class="subsection-content">
           <p class="highlighted">
             As we are dealing with employment, poverty, and crime rate percentages across the Philippine regions, we need to clean and preprocess them separately. In doing so, we ensure the integrity of our data and thus our results & findings at the end of the study! Since we already have our unified dataset, we dissected this to confirm that our data remains consistent with the discussions in the data’s nature as explained in the 
-            <a href="#section3">Data Collection</a> section.
+            <a href="#section2">Data Collection</a> section.
           </p>
 
           <!-- Sub-subsections (chronological numbered items) -->
           <div class="subsubsection">
             <strong>1.) Handling Missing/Null Values</strong>
             <p>
-              Before any transformation, the unified dataset <code>unified_df</code> was inspected for missing or null values using 
-              <code>.info()</code>, <code>.isnull().sum()</code>, and heatmap visualization. 
+              Before any transformation, the unified dataset (<span class="code-text">unified_df</span>) was inspected for missing or null values using 
+              <span class="code-text">.info()</span>, <span class="code-text">.isnull().sum()</span>, and heatmap visualization. 
               No missing values were detected — the count and shape of the dataset remained consistent, 
               confirming data completeness.
             </p>
@@ -437,8 +444,8 @@
               </div>
             </div>
             <p>
-              From these graphs, we can see the regions generally follow the same trends. There does not seem to be much of an outlier except for NCR having a 140,000 total number of crime during 2018. <!-- NOTE that outliers affirmed due to the IQR test and z-score test/standardization done in EDA? -->
-              Now, let use look at the averages throughout the years in a bar graph to compare them easier.
+              From these graphs, we can see the regions generally follow the same trends. There does not seem to be much of an outlier except for NCR, approximately having 140,000 total number of crimes during 2018. <!-- NOTE that outliers affirmed due to the IQR test and z-score test/standardization done in EDA? -->
+              Now, let's look at the averages throughout the years in a bar graph to compare them easier.
             </p>
             <div class="graphs">
               <img src="./images/3_methodology/b_researchQuestions/avg_p.png" alt="" class="graph">
