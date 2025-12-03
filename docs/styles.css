@@ -825,12 +825,13 @@ a {
   text-align: center;
 }
 
-.hypothesis-testing-figure {
+.landscape-figure {
+  color: #00c3ff;
   text-align: center;
   margin: 2.5rem auto;
 }
 
-.hypothesis-testing-summary {
+.landscape-figure-summary {
   display: block;
   max-width: 100%;
   height: auto;
@@ -840,9 +841,9 @@ a {
   transition: transform 0.3s ease;
 }
 
-.figure-caption {
+.landscape-figure-caption {
   font-size: 0.9rem;
-  color: #aaa; /* subtle, gray tone */
+  color: #00c3ff;
   margin: 0;
   font-style: italic;
 }
