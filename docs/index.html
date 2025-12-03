@@ -310,84 +310,83 @@
         <h4 class="subsection-header">Data Preprocessing</h4>
         <div class="subsection-content">
           <p class="highlighted">
-            As we are dealing with employment, poverty, and crime rate percentages across the Philippine regions, we need to clean and preprocess them separately. In doing so, we ensure the integrity of our data and thus our results & findings at the end of the study! Since we already have our unified dataset, we dissected this to confirm that our data remains consistent with the discussions in the data’s nature as explained in the 
+            As we are dealing with employment, poverty, and crime rate numbers across the Philippine regions, we need to clean and preprocess them separately. In doing so, we ensure the integrity of our data and thus our results & findings at the end of the study! Since we already have our unified dataset, we dissected this to confirm that our data remains consistent with the discussions in the data’s nature as explained in the 
             <a href="#section2">Data Collection</a> section.
           </p>
 
           <!-- Sub-subsections (chronological numbered items) -->
           <div class="subsubsection">
-            <strong>1.) Handling Missing/Null Values</strong>
+            <strong>1.) Data Conversion</strong>
             <p>
-              Before any transformation, the unified dataset (<span class="code-text">unified_df</span>) was inspected for missing or null values using 
-              <span class="code-text">.info()</span>, <span class="code-text">.isnull().sum()</span>, and heatmap visualization. 
-              No missing values were detected — the count and shape of the dataset remained consistent, 
-              confirming data completeness.
+              Upon inspecting and understanding the unified dataset initially, we observed that its shape it has 119 rows and 24 columns, giving it a shape of <span class="code-text">(119, 24)</span>. From this, we noticed that the dataset is small-scale. Apart from its size, we also noticed that some columns need to be converted to a numerical value to be compatible with our study’s successive statistical tests. As such, we convert these columns (i.e., <span class="code-text">population_estimate_15_over</span>,
+    <span class="code-text">labor_force_estimate</span>,
+    <span class="code-text">poverty_rural</span>,
+    <span class="code-text">index_crime</span>,
+    <span class="code-text">index_crime_clear</span>,
+    <span class="code-text">nonindex_crime</span>,
+    <span class="code-text">nonindex_crime_clear</span>,
+    <span class="code-text">crime_sovled_total</span>
+) to a numerical value (either float or integer but in our case, we converted it to a float).
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>2.) Data Cleaning and Type Conversion</strong>
+            <strong>2.) Data Dropping and Text Nuances</strong>
             <p>
-              Numerical columns (e.g., <em>population</em>, <em>poverty rates</em>, <em>crime counts</em>) contained commas and spaces. 
-              These were cleaned and converted to numeric types via string replacement and coercion 
-              to ensure consistency and prevent type-related computation errors.
+              After data conversion to numerical values, some columns are irrelevant to the study’s aim. As such, said columns were dropped which cut the dataset’s shape to <span class="code-text">(119, 10)</span>. Apart from this, column(s) were renamed just for uniform’s sake (i.e., <span class="code-text">crime_sovled_total</span> to <span class="code-text">total_crime_solved</span> since we were getting annoyed with the spelling haha…)
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>3.) Dropping Redundant or Irrelevant Features</strong>
+            <strong>3.) Data Scaling</strong>
             <p>
-              Columns such as <em>standard error</em> and <em>coefficient of variation (CV)</em> were dropped to reduce dimensionality and enhance analytical clarity. 
-              Remaining variables reflected only core socioeconomic and crime-related indicators.
+              From the unified dataset, we noted that some were not correctly up to scale, such as <span class="code-text">population_estimate_over</span>, <span class="code-text">poverty_urban</span>, and <span class="code-text">poverty_rural</span>. In truth, their values were divided by <em>1000</em> from the dataset, which inclined us to multiply their values by <em>1000</em> to affix them to their true values.
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>4.) Feature Renaming and Reinforcement</strong>
+            <strong>4.) Feature Engineering and Selection</strong>
             <p>
-              Variables were standardized for semantic clarity 
-              (e.g., <code>crime_solved_total</code> → <code>total_crime_solved</code>). 
-              A refined dataset <code>reinforced_df</code> was created, keeping only the relevant indicators 
-              such as demographics, employment, poverty, and crime statistics.
+Normally, this is done after outlier detection but since outliers may opt us to do this again… it was a tactical option to do this before outlier testing so that data cleaning (if needed) would likewise be only done once. 
+
+Primarily, we engineered and added features such as <span class="code-text">total_poverty</span> to further test our hypotheses and help in answering the research questions. More so, we ensured the inclusion of poverty and crime RATES to account for differences in regional populations. After all, larger populations may intuitively correspond to higher poverty, crime, and employment figures. Thus, we’re gonna be evaluating the effect of RAW COUNTS and RATES to crime on both scales! This then boomed our dataset’s shape from <span class="code-text">(119, 10)</span> to <span class="code-text">(119, 18)</span>.
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>5.) Outlier Detection and Treatment</strong>
+            <strong>5.) Outlier Detection</strong>
             <p>
-              Outliers were examined using both <strong>Z-score</strong> and <strong>IQR</strong> methods. 
-              Potential anomalies were identified using ±3 standard deviations and 1.5×IQR thresholds. 
-              Only evident data errors were removed, maintaining valid extremes for accuracy.
+              Proceeding with outlier testing, we ensured to avoid hastiness by merely picking some outlier testing and running our dataset on it. As such, we first ran normality testing using the Shapiro-Wilk test to check if our dataset was normally distributed. If it were, we ran a Z-score test. Otherwise, we ran an IQR test. 
+
+From this, we noticed that the only "<em>Likely Normal</em>" feature in our dataset was <span class="code-text">total_poverty</span>. As such, we ran every feature on IQR, whilst running only <span class="code-text">total_poverty</span> on Z-score. From this, we got similar results, showing only one (1) critical outlier - an inconsistency to <span class="code-text">total_poverty_rate</span> which amounted to 109%…. which is ABSURD! This suggested a data inconsistency in the original dataset. As such, this calls for a fix… which we carried out through data imputation!
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>6.) Feature Engineering</strong>
+            <strong>6.) Outlier Treatment via Data Imputation</strong>
             <p>
-              Two composite indicators were derived:
-              <code>Total Crime = Index Crime + Non-Index Crime</code> and 
-              <code>Total Poverty = Poverty (Urban) + Poverty (Rural)</code>. 
-              These provided more holistic regional indicators for the study.
+              To handle the absurd outlier mentioned above, we utilized mean imputation because we were concerned with both counts and rates anyways… This effectively resulted to an outlier-free dataset!
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>7.) Standardization</strong>
+            <strong>7.) Data Standardization</strong>
             <p>
-              For correlation and regression analyses, numeric variables were standardized using 
-              <code>StandardScaler</code> from <code>sklearn</code> 
-              to achieve zero-mean and unit-variance scaling. 
-              This ensured equitable influence among features of differing magnitudes.
+              Since we would be using machine learning models in the latter part of the study (i.e., LinearRegression, PCA, Lasso, Ridge, etc.), standardizing the current dataset was a must.
+
+To do so, we carried out data standardization using <span class="code-text">RobustScaler()</span> because our data was not normally distributed.
             </p>
           </div>
 
           <div class="subsubsection">
-            <strong>8.) Final Output</strong>
+            <strong>8.) Dataset Visualization & Storing</strong>
             <p>
-              The preprocessing produced two key datasets: 
-              <code>reinforced_df</code> (cleaned and optimized) and 
-              <code>standardized_df</code> (normalized for inferential analysis).
+              With everything cleaned and standardized, the datasets to be used for statistical testing and machine 
+              learning are now intact! Note that in this study, we will be using two (2) datasets:
             </p>
+
+              <li><span class="code-text">reinforced_df</span> – unstandardized dataset for proper raw count vs rate comparisons</li>
+              <li><span class="code-text">standardized_df</span> – standardized dataset via <span class="code-text">RobustScaler()</span>for ML methods</li>
 
             <div class="footer-note">
               <a href="https://drive.google.com/drive/folders/1_knZiyQ45micvp-ORRz5ZlO693vtVdx-?usp=sharing" target="_blank">To view reinforced and standardized datasets, click me!</a>
