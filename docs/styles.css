@@ -880,3 +880,31 @@ a {
 .code-text {
     font-family: 'Courier New', monospace;
 }
+
+/* Main subsubsection title */
+.subsubsection-title {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  display: inline-block;
+}
+
+/* Nested subsubsubsection title */
+.subsubsubsection-title {
+  font-size: 1.15rem;
+  color: #00c3ff;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-left: 3px solid #00c3ff;
+  background: rgba(0,195,255,0.03);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 3px rgba(0,195,255,0.4);
+  display: inline-block;
+}
+
+.subsubsection-indent {
+  text-align: center;
+}
