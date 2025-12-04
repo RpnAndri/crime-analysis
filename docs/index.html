@@ -498,7 +498,7 @@ To do so, we carried out data standardization using <span class="code-text">Robu
           </div>
 
 
-           <div class="subsubsection">
+          <div class="subsubsection">
             <div class="subsubsection-title">3.) To what extent can improvements in these factors (e.g., reduced poverty, increased employment) predict a decrease in crime rates across regions?</div>
             <p>
               This will be answered using the model. Go to the machine learning section.
@@ -616,9 +616,48 @@ To do so, we carried out data standardization using <span class="code-text">Robu
         <h4 class="subsection-header">Machine Learning Model</h4>
         <div class="subsection-content">
           <p class="highlighted">
-            As far as we've explored, we haven't answered all of our questions! To answer the final research question (RQ3), we will be needing predictive modeling!
+            As far as we've explored, we haven't answered all of our questions! To answer the final research question (RQ3), we will be needing predictive modeling! As per usual, please check the github for a more detailed explanation.
           </p>
-          <p>insertStuffHere</p>
+          <br>
+          <div class="subsubsection">
+            <div class="subsubsection-title">3.) To what extent can improvements in these factors (e.g., reduced poverty, increased employment) predict a decrease in crime rates across regions?</div>
+            <p>
+              Looping back to the final research question, the machine learning model will determine if improvements in lowering poverty and increasing employment will affect the number of crimes.
+              To evaluate whether socioeconomic indicators can predict crime across Philippine regions, multiple machine learning models were tested using cross-validated R<sup>2</sup> scores. Two separate targets were evaluated namely, <strong>Crime Counts</strong> and <strong>Crime Rates (per capita)</strong>
+            </p>
+            <br>
+            <p>
+              Linear Regression, Ridge Regression, Lasso Regression, Random Forst, and Gradient Boosting were used and validated using R<sup>2</sup>.
+              Linear Regression was chosen to look for any linear relationships between the variables. Ridge and Lasso Regression were chosen to reduce multicollinearity since poverty and employment may be correlated as seen from the heatmap.
+              Random Forest and Gradient Boosting were also chosen to incorporate nonlinear relationships and regional differences.
+            </p>
+
+            <div class="corr2">
+              <img src="./images/4_machineLlearning/finetune.png" alt="Image of the code to finetune the models" style="width: 70%; margin-top: 20px;">
+            </div>
+            <p>
+              To further ensure accurate and the best results, some simple tuning was done to the hyperparameters as seen in the picture above. The results are seen below. Again, for the full code and implementation of the models, please visit the Github repository.
+            </p>
+            <div class="corr2">
+              <img src="./images/4_machineLlearning/results_counts.png" alt="Image of the results of the machine learning models" style="width: 70%; margin-top: 20px;">
+            </div>
+            <br>
+            <p>This was also done to predict the crime rates using the same models, however, none of them showed to be effective or reliable.</p>
+            <p>
+              From the results and validation using R<sup>2</sup>, we can determine that Ridge and Lasso performed the best among the models with a score of 0.315 and 0.254 respectively.
+              They performed the best due to ridge reducing coefficient variance and Lasso setting irrelevant coefficients to zero (feature selection).
+              This applies to this study since socioeconomic indicators such as poverty and employment share an overlapping variance, and regularization prevents overfitting while keeping the meaningful predictors.
+              However, it is important to note that these ML outputs do not provide feature importance for Ridge and Lasso since key predictors came from hypothesis testing and not ML coefficients.
+              This means that the main drivers were determined by the hypothesis testing and these models are only used for prediction. They work hand in hand to give meaning to the data.
+            </p>
+            <div class="graphs">
+              <img src="./images/4_machineLlearning/ridge.png" alt="Representation for Ridge" class="graph_2">
+              <img src="./images/4_machineLlearning/lasso.png" alt="Representation for Lasso" class="graph_2">
+            </div>
+
+
+
+          </div>
         </div>
       </div>
 
