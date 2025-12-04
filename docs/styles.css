@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+/* Global Variables */
+b, strong {
+  color: #00c3ff;
+}
+
 /* CSS Transitions and Animations */
 @keyframes reveal {
   from { transform: translateX(0); }
@@ -225,6 +230,8 @@
 #section4 {
   background: #181818;
   color: white;
+  padding: 2em;
+  text-align: justify;
 }
 
 #section5 {
