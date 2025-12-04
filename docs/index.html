@@ -626,18 +626,18 @@ To do so, we carried out data standardization using <span class="code-text">Robu
         <h4 class="subsection-header" id="machine-learning-section">Machine Learning Model</h4>
         <div class="subsection-content">
           <p class="highlighted">
-            As far as we've explored, we haven't answered all of our questions! To answer the final research question (RQ3), we will be needing predictive modeling! As per usual, please check the github for a more detailed explanation.
+            As far as we've explored, we haven't answered all of our research questions! To answer the final research question (RQ3), we will be needing predictive modeling! As per usual, please check our <a href="https://github.com/RpnAndri/crime-analysis.git" target="_blank">GitHub reposity</a> for a more detailed explanation.
           </p>
           <br>
           <div class="subsubsection">
             <div class="subsubsection-title">3.) To what extent can improvements in these factors (e.g., reduced poverty, increased employment) predict a decrease in crime rates across regions?</div>
             <p>
               Looping back to the final research question, the machine learning model will determine if improvements in lowering poverty and increasing employment will affect the number of crimes.
-              To evaluate whether socioeconomic indicators can predict crime across Philippine regions, multiple machine learning models were tested using cross-validated R<sup>2</sup> scores. Two separate targets were evaluated namely, <strong>Crime Counts</strong> and <strong>Crime Rates (per capita)</strong>
+              To evaluate whether socioeconomic indicators can predict crime across Philippine regions, multiple machine learning models were tested using cross-validated R<sup>2</sup> scores. Two (2) separate targets were evaluated namely, <strong>Crime Counts</strong> and <strong>Crime Rates (per capita)</strong>
             </p>
             <br>
             <p>
-              Linear Regression, Ridge Regression, Lasso Regression, Random Forst, and Gradient Boosting were used and validated using R<sup>2</sup>.
+              Linear Regression, Ridge Regression, Lasso Regression, Random Forest, and Gradient Boosting were used and validated using R<sup>2</sup>.
               Linear Regression was chosen to look for any linear relationships between the variables. Ridge and Lasso Regression were chosen to reduce multicollinearity since poverty and employment may be correlated as seen from the heatmap.
               Random Forest and Gradient Boosting were also chosen to incorporate nonlinear relationships and regional differences.
             </p>
@@ -645,8 +645,9 @@ To do so, we carried out data standardization using <span class="code-text">Robu
             <div class="corr2">
               <img src="./images/4_machineLlearning/finetune.png" alt="Image of the code to finetune the models" style="width: 70%; margin-top: 20px;">
             </div>
+            <br>
             <p>
-              To further ensure accurate and the best results, some simple tuning was done to the hyperparameters as seen in the picture above. The results are seen below. Again, for the full code and implementation of the models, please visit the Github repository.
+              To further ensure accurate and the best results, some simple tuning was done to the hyperparameters as seen in the picture above. The results are seen below. Again, for the full code and implementation of the models, please visit our <a href="https://github.com/RpnAndri/crime-analysis.git" target="_blank">Github repository</a>.
             </p>
             <div class="corr2">
               <img src="./images/4_machineLlearning/results_counts.png" alt="Image of the results of the machine learning models results" style="width: 70%; margin-top: 20px;">
@@ -655,7 +656,7 @@ To do so, we carried out data standardization using <span class="code-text">Robu
             <p>This was also done to predict the crime rates using the same models, however, none of them showed to be effective or reliable.</p>
             <p>
               From the results and validation using R<sup>2</sup>, we can determine that Ridge and Lasso performed the best among the models with a score of 0.315 and 0.254 respectively.
-              They performed the best due to ridge reducing coefficient variance and Lasso setting irrelevant coefficients to zero (feature selection).
+              They performed the best due to Ridge reducing coefficient variance and Lasso setting irrelevant coefficients to zero (feature selection).
               This applies to this study since socioeconomic indicators such as poverty and employment share an overlapping variance, and regularization prevents overfitting while keeping the meaningful predictors.
               However, it is important to note that these ML outputs do not provide feature importance for Ridge and Lasso since key predictors came from hypothesis testing and not ML coefficients.
               This means that the main drivers were determined by the hypothesis testing and these models are only used for prediction. They work hand in hand to give meaning to the data.
@@ -664,17 +665,19 @@ To do so, we carried out data standardization using <span class="code-text">Robu
               <img src="./images/4_machineLlearning/ridge.png" alt="Representation for Ridge" class="graph_2">
               <img src="./images/4_machineLlearning/lasso.png" alt="Representation for Lasso" class="graph_2">
             </div>
-            <p>These graphs show the performance and accuracy of the models and the more dots that are near or close to the dotted line means that it has a more accurate prediction.</p>
+            <br>
+            <p>These graphs show the performance and accuracy of the models. The more dots that are near or close to the dotted line means that it has a more accurate prediction.</p>
             <p>Going back to the research question, the importance of a feature was retrieved from the tree-based models.</p>
             <div class="corr2">
               <img src="./images/4_machineLlearning/tree.png" alt="Image of the results of the features" style="width: 70%; margin-top: 20px;">
             </div>
+            <br>
             <p>
-              From here we can see that the population_estimate_15_over was the biggest factor or indicator for the tree models, and the NCR region came in as the 2nd most important factor.
-              On the other hand, our main socioeconomic indicators, urban poverty and employment rate are minimal contributors compared to the main ones with only .
+              From here we can see that the <span class="code-text">population_estimate_15_over</span> was the biggest factor or indicator for the tree models, and the NCR region came in as the 2nd most important factor.
+              On the other hand, our main socioeconomic indicators, urban poverty and employment rate, are minimal contributors compared to the main ones.
               We simulated and tried to predict the effect of improving the socioeconomic factors by decreasing urban poverty by 10% and increasing employment rate by 5%.
               The predicted crime counts was modest with a ~32% variance (R<sup>2</sup> ≈ 0.32). This means that improvements in these factors reduce crime, but the remaining 68% are covered by other social or cultural factors.
-              To summarize, tye simulation confirms that both factors do affect the total number of crime, but it is limited as other unmeasured factors also contribute significantly to the total number of crime.
+              To summarize, the simulation confirms that both factors do affect the total number of crime, but it is limited as other unmeasured factors also contribute significantly to the total number of crime.
             </p>
 
           </div>
