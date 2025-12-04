@@ -1,7 +1,17 @@
-<h1>
-    <img src="https://github.com/RpnAndri/crime-analysis/blob/main/docs/images/logo.png?raw=true" alt="logo of the site" width="80" style="vertical-align: middle; margin-right: 10px;">
-    The Regional Crime Puzzle
-</h1>
+<table>
+    <tr>
+        <td>
+            <img src="./docs/images/logo.png" alt="logo of the site" width="80" style="vertical-align: middle; margin-right: 10px;">
+        </td>
+        <td>
+            <h1>
+                The Regional Crime Puzzle
+            </h1>
+        </td>
+    </tr>
+</table>
+
+
 
 ```
 CS 132 WFV
